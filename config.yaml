@@ -1,0 +1,79 @@
+# PySecScanner 配置文件 v2.0
+
+# 通用扫描配置
+scan:
+  timeout: 10
+  max_retries: 3
+  concurrency: 50
+  delay: 0.0
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  proxy: null
+  verify_ssl: false
+
+# 端口扫描配置
+port_scan:
+  ports: "common"
+  scan_type: "tcp"
+  service_detection: true
+  os_detection: true
+  timeout: 2.0
+
+# 子域名枚举配置
+subdomain:
+  wordlist: "data/wordlists/subdomains.txt"
+  threads: 100
+  timeout: 5.0
+
+# 目录扫描配置
+dir_scan:
+  wordlist: "data/wordlists/directories.txt"
+  extensions:
+    - ".php"
+    - ".html"
+    - ".asp"
+    - ".aspx"
+    - ".jsp"
+    - ".bak"
+  threads: 50
+  recursive: false
+  max_depth: 2
+
+# 爬虫配置
+crawler:
+  max_depth: 3
+  max_pages: 100
+  same_domain: true
+
+# 漏洞扫描配置
+vuln_scan:
+  sql_injection: true
+  xss: true
+  sensitive_info: true
+  ssrf: true
+  csrf: true
+  xxe: true
+  file_inclusion: true
+  command_injection: true
+
+# 报告配置
+report:
+  output_dir: "outputs"
+  format: "html"
+  include_evidence: true
+
+# 数据库配置
+database:
+  path: "data/scanner.db"
+
+# Web界面配置
+web:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+
+# 代理配置
+proxy:
+  enabled: false
+  url: null
+  file: null
+  rotate: false
