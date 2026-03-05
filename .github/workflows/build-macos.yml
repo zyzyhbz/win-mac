@@ -26,7 +26,7 @@ jobs:
     
     - name: Build with PyInstaller
       run: |
-        pyinstaller --onefile your_script.py  # 单文件打包
+        pyinstaller --onefile run.py  # 单文件打包
         # 或 pyinstaller --windowed your_script.py  # 窗口应用
     
     - name: Upload artifact
