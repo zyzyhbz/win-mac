@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  pysec-scanner:
+    build: .
+    container_name: pysec-scanner
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+      - ./logs:/app/logs
+      - ./config.yaml:/app/config.yaml
+    environment:
+      - TZ=Asia/Shanghai
+    restart: unless-stopped
+    
+  # 可选：Redis用于任务队列
+  # redis:
+  #   image: redis:alpine
+  #   container_name: pysec-redis
+  #   ports:
+  #     - "6379:6379"
+  #   restart: unless-stopped

